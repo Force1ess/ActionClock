@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/clockFragment"
+    android:id="@+id/mobile_navigation">
+    <fragment
+        android:id="@+id/clockFragment"
+        android:name="com.forceless.actionclock.ClockFragment"
+        android:label="clock_list"
+        tools:layout="@layout/clock_list" />
+    <fragment
+        android:id="@+id/addClockFragment"
+        android:name="com.forceless.actionclock.add_clock"
+        android:label="add_clock"
+        tools:layout="@layout/add_clock"
+       />
+    <fragment
+        android:id="@+id/settingFragment"
+        android:name="com.forceless.actionclock.SettingFragment"
+        android:label="setting"
+        tools:layout="@layout/fragment_setting"/>
+</navigation>
