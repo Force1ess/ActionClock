@@ -4,14 +4,10 @@ import android.app.Notification
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.app.Service
-import android.content.Context
 import android.content.Intent
 import android.content.Intent.FLAG_ACTIVITY_NEW_TASK
-import android.os.Build
 import android.os.IBinder
 import android.util.Log
-import com.forceless.actionclock.AlarmManager.Companion.context
-import com.forceless.actionclock.MainActivity
 import com.forceless.actionclock.R
 import com.forceless.actionclock.WakeupActivity
 
@@ -32,7 +28,7 @@ class LanuchAppService: Service() {
             .build()
         val notificationManager = getSystemService(NOTIFICATION_SERVICE) as NotificationManager
         notificationManager.createNotificationChannel(notificationChannel)
-        Log.d("Launch APP service ", "received ")
+        Log.d("ActionClock"+"Launch APP service ", "received ")
         startForeground(12345, notification)
         val inte = Intent(this, WakeupActivity::class.java)
         inte.flags = FLAG_ACTIVITY_NEW_TASK

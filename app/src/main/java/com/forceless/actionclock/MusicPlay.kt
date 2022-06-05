@@ -5,11 +5,13 @@ import android.app.NotificationManager
 import android.app.Service
 import android.content.Context
 import android.content.Intent
+import android.media.AudioManager
 import android.media.MediaPlayer
 import android.os.IBinder
-import android.util.Log
-import java.io.File
-import java.io.FileOutputStream
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.MainScope
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 class MusicPlay : Service() {
     var player = MediaPlayer()
@@ -34,14 +36,16 @@ class MusicPlay : Service() {
         player.isLooping = true
         player.prepare()
         player.start()
-        CoroutineScope(Dispatchers.IO).launch {
-                delay(500)
-                AudioManager am = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
-                am.setStreamVolume(
-                    AudioManager.STREAM_MUSIC,
-                    am.getStreamMaxVolume(AudioManager.STREAM_MUSIC),
-                0);
+        MainScope().launch(Dispatchers.IO) {
+            delay(500)
+            val am = getSystemService(Context.AUDIO_SERVICE) as? AudioManager
+            while(am!!.getStreamVolume(AudioManager.STREAM_MUSIC)!=am.getStreamMaxVolume(AudioManager.STREAM_MUSIC)){
+            am.setStreamVolume(
+                AudioManager.STREAM_MUSIC,
+                am.getStreamMaxVolume(AudioManager.STREAM_MUSIC),
+                0)
             }
+        }
         return super.onStartCommand(intent, flags, startId)
 
     }

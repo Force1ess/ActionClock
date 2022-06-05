@@ -1,7 +1,6 @@
 package com.forceless.actionclock
 
 import android.Manifest
-import android.content.BroadcastReceiver
 import android.content.Intent
 import android.content.IntentFilter
 import android.os.Bundle
@@ -33,11 +32,19 @@ class MainActivity : AppCompatActivity() {
             Manifest.permission.FOREGROUND_SERVICE,
             Manifest.permission.SET_ALARM)
         PermissionRequest.getPermission(this,permissions)
-        Log.d("Alarm","Started")
+        Log.d("ActionClock"+"Alarm","Started")
         AlarmManager.context=this
         MainScope().launch(Dispatchers.IO) {
             AlarmManager.updateAlarm()
         }
+        val intentfilter = IntentFilter()
+        intentfilter.addAction(Intent.ACTION_REBOOT)
+        intentfilter.addAction(Intent.ACTION_BOOT_COMPLETED)
+        intentfilter.addAction(Intent.ACTION_SCREEN_OFF)
+        intentfilter.addAction(Intent.ACTION_SCREEN_ON)
+        intentfilter.addAction("restartservice")
+        intentfilter.addAction(Intent.ACTION_SHUTDOWN)
+        AlarmManager.context.registerReceiver(BootReceiver(), intentfilter)
 
 
     }
@@ -48,7 +55,7 @@ class MainActivity : AppCompatActivity() {
         super.onDestroy()
         val broadcastIntent = Intent()
         broadcastIntent.action = "restartservice"
-        broadcastIntent.setClass(this, ClockReceiver::class.java)
+        broadcastIntent.setClass(this, BootReceiver::class.java)
         this.sendBroadcast(broadcastIntent)
     }
 }

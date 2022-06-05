@@ -4,11 +4,13 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Forceless/.gradle/caches/transforms-3/d712bc876a373ea5768e2e78ec7db3e9/transformed/core-1.7.0/res/drawable-v21/notification_action_background.xml" value="0.249" />
+        <entry key="..\:/Users/Forceless/AndroidStudioProjects/ActionClock/app/src/main/res/drawable-v24/ic_launche.xml" value="0.2185" />
         <entry key="..\:/Users/Forceless/AndroidStudioProjects/ActionClock/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1885" />
         <entry key="..\:/Users/Forceless/AndroidStudioProjects/ActionClock/app/src/main/res/drawable/add.xml" value="0.1435" />
         <entry key="..\:/Users/Forceless/AndroidStudioProjects/ActionClock/app/src/main/res/drawable/clock.xml" value="0.1435" />
         <entry key="..\:/Users/Forceless/AndroidStudioProjects/ActionClock/app/src/main/res/drawable/clockTheme.xml" value="0.2535" />
         <entry key="..\:/Users/Forceless/AndroidStudioProjects/ActionClock/app/src/main/res/drawable/clock_theme.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/Forceless/AndroidStudioProjects/ActionClock/app/src/main/res/drawable/clockp.xml" value="0.1825" />
         <entry key="..\:/Users/Forceless/AndroidStudioProjects/ActionClock/app/src/main/res/drawable/ic_app_logo.xml" value="0.249" />
         <entry key="..\:/Users/Forceless/AndroidStudioProjects/ActionClock/app/src/main/res/drawable/ic_dashboard_black_24dp.xml" value="0.1885" />
         <entry key="..\:/Users/Forceless/AndroidStudioProjects/ActionClock/app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.1885" />
@@ -20,7 +22,7 @@
         <entry key="..\:/Users/Forceless/AndroidStudioProjects/ActionClock/app/src/main/res/drawable/list.xml" value="0.215" />
         <entry key="..\:/Users/Forceless/AndroidStudioProjects/ActionClock/app/src/main/res/drawable/market.xml" value="0.26" />
         <entry key="..\:/Users/Forceless/AndroidStudioProjects/ActionClock/app/src/main/res/drawable/rounded.xml" value="0.326" />
-        <entry key="..\:/Users/Forceless/AndroidStudioProjects/ActionClock/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/Forceless/AndroidStudioProjects/ActionClock/app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="..\:/Users/Forceless/AndroidStudioProjects/ActionClock/app/src/main/res/layout/add_clock.xml" value="0.1" />
         <entry key="..\:/Users/Forceless/AndroidStudioProjects/ActionClock/app/src/main/res/layout/add_option_item.xml" value="0.25677083333333334" />
         <entry key="..\:/Users/Forceless/AndroidStudioProjects/ActionClock/app/src/main/res/layout/add_option_list.xml" value="0.2421875" />
@@ -41,9 +43,10 @@
         <entry key="..\:/Users/Forceless/AndroidStudioProjects/ActionClock/app/src/main/res/layout/fragment_setting.xml" value="0.3333333333333333" />
         <entry key="..\:/Users/Forceless/AndroidStudioProjects/ActionClock/app/src/main/res/layout/market_item.xml" value="0.2833333333333333" />
         <entry key="..\:/Users/Forceless/AndroidStudioProjects/ActionClock/app/src/main/res/layout/setting_fragment.xml" value="0.15657894736842104" />
-        <entry key="..\:/Users/Forceless/AndroidStudioProjects/ActionClock/app/src/main/res/menu/bottle_nav.xml" value="0.1" />
+        <entry key="..\:/Users/Forceless/AndroidStudioProjects/ActionClock/app/src/main/res/menu/bottle_nav.xml" value="0.22" />
         <entry key="..\:/Users/Forceless/AndroidStudioProjects/ActionClock/app/src/main/res/menu/bottom_nav_menu.xml" value="0.35520833333333335" />
         <entry key="..\:/Users/Forceless/AndroidStudioProjects/ActionClock/app/src/main/res/menu/top_nav_menu.xml" value="0.35520833333333335" />
+        <entry key="..\:/Users/Forceless/AndroidStudioProjects/ActionClock/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.272" />
       </map>
     </option>
   </component>
@@ -51,6 +54,6 @@
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
-    <option name="id" value="Android" />
+    <option name="id" value="jpab" />
   </component>
 </project>

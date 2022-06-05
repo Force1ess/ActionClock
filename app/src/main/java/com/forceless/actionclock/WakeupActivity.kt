@@ -1,27 +1,19 @@
 package com.forceless.actionclock
 
-import android.app.StatusBarManager
 import android.content.Context
 import android.content.Intent
 import android.graphics.Color
 import android.graphics.Typeface
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.Editable
 import android.util.Log
 import android.util.Size
 import android.view.View
-import android.view.ViewGroup
 import android.view.Window
-import android.view.WindowManager
-import android.widget.LinearLayout
-import androidx.appcompat.widget.LinearLayoutCompat
+import androidx.appcompat.app.AppCompatActivity
 import androidx.camera.core.*
 import androidx.camera.lifecycle.ProcessCameraProvider
-import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
 import androidx.core.view.WindowCompat
-import androidx.core.view.marginTop
 import com.forceless.actionclock.databinding.AddClockBinding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -62,7 +54,7 @@ class WakeupActivity : AppCompatActivity() {
                     mInputTensorBuffer, 0)
 
                 val module = LiteModuleLoader.load(path)
-                val outputTensor = module.forward(IValue.from(mInputTensor)).toTensor();
+                val outputTensor = module.forward(IValue.from(mInputTensor)).toTensor()
                 val TOP_K = 10
                 val scores = outputTensor.dataAsFloatArray
                 val ixs: IntArray = Utils.topK(scores, TOP_K)
@@ -73,7 +65,7 @@ class WakeupActivity : AppCompatActivity() {
                 listener(ixs)
             }
             catch(ex:Exception){
-                Log.i("fuck",ex.toString())
+                Log.i("ActionClock",ex.toString())
             }
         }
     }
@@ -95,7 +87,7 @@ class WakeupActivity : AppCompatActivity() {
                 cameraProvider.bindToLifecycle(
                     this, cameraSelector, preview)
             } catch(exc: Exception) {
-                Log.d("fuck",exc.toString())
+                Log.d("ActionClock",exc.toString())
             }
             val path = Utils.assetFilePath(this,"model.ptl")
             val Inferece = ImageAnalysis.Builder()
@@ -119,7 +111,7 @@ class WakeupActivity : AppCompatActivity() {
                                     CoroutineScope(Dispatchers.IO).launch {
                                         delay(500)
                                         finishAffinity()
-                                        Log.d("Alarm"," Responded")
+                                        Log.d("ActionClock"+"Alarm"," Responded")
                                     }
                                 }
                             }
@@ -137,7 +129,7 @@ class WakeupActivity : AppCompatActivity() {
         path = Utils.assetFilePath(this,"model.ptl")!!
         val musicintent = Intent(this,MusicPlay::class.java)
         musicintent.putExtra("path",Utils.assetFilePath(this,"ring.mp3")!!)
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        requestWindowFeature(Window.FEATURE_NO_TITLE)
         supportActionBar!!.hide()
         WindowCompat.setDecorFitsSystemWindows(window, false)
         startService(musicintent)
@@ -163,7 +155,7 @@ class WakeupActivity : AppCompatActivity() {
         super.onDestroy()
         if (!stoped){
             val broadcastIntent = Intent()
-            broadcastIntent.setAction("com.forceless.alarm")
+            broadcastIntent.action = "com.forceless.alarm"
             broadcastIntent.setClass(this,ClockReceiver::class.java)
             this.sendBroadcast(broadcastIntent)
         }

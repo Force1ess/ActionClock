@@ -24,6 +24,5 @@ class SettingFragment : Fragment() {
             layoutManager = LinearLayoutManager(context)
             adapter = MyClassItemRecyclerViewAdapter(ImageNetClasses.IMAGENET_CLASSES)
         }
-        //FastScrollerBuilder(binding.expandableList).useMd2Style().build()
     }
 }

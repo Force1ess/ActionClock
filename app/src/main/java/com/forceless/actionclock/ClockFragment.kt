@@ -42,7 +42,7 @@ class ClockFragment : Fragment() {
     ): View? {
         AlarmManager.context = requireContext()
         dao.getAll().asLiveData().observe(viewLifecycleOwner) {
-            Log.d("ClockFragment", "$it")
+            Log.d("ActionClock"+"ClockFragment", "$it")
             if (it.isNotEmpty())
                 this@ClockFragment.values = it
             else

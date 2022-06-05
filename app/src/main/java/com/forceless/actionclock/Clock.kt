@@ -52,6 +52,6 @@ interface ClockDao {
 
 @Database(entities = [Clock::class], version = 1, exportSchema = false)
 @TypeConverters(Converter::class)
-abstract class ClockDB() : RoomDatabase() {
+abstract class ClockDB : RoomDatabase() {
     abstract fun clockDao(): ClockDao
 }

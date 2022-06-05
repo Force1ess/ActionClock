@@ -54,8 +54,8 @@ private class ClassificationAnalyzer(private val listener: inferlistener, val pa
             mInputTensorBuffer, 0)
 
         val module = LiteModuleLoader.load(path)
-        val outputTensor = module.forward(IValue.from(mInputTensor)).toTensor();
-        val TOP_K=3
+        val outputTensor = module.forward(IValue.from(mInputTensor)).toTensor()
+            val TOP_K=3
         val scores = outputTensor.dataAsFloatArray
         val ixs: IntArray = Utils.topK(scores, TOP_K)
             CoroutineScope(Dispatchers.IO).launch {
@@ -65,7 +65,7 @@ private class ClassificationAnalyzer(private val listener: inferlistener, val pa
         listener(ixs)
         }
         catch(ex:Exception){
-            Log.i("fuck",ex.toString())
+            Log.i("ActionClock",ex.toString())
         }
     }
 }
@@ -97,7 +97,7 @@ class add_clock : Fragment() {
                 cameraProvider.bindToLifecycle(
                     this, cameraSelector, preview)
             } catch(exc: Exception) {
-                Log.d("fuck",exc.toString())
+                Log.d("ActionClock",exc.toString())
             }
             val path = assetFilePath(requireContext(),"model.ptl")
             val Inferece = ImageAnalysis.Builder()

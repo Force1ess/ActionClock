@@ -1,7 +1,6 @@
 package com.forceless.actionclock
 
 import android.content.Context
-import android.provider.SyncStateContract
 import android.util.Log
 import java.io.File
 import java.io.FileOutputStream
@@ -10,12 +9,12 @@ import java.util.*
 
 object Utils {
     fun assetFilePath(context: Context, assetName: String): String? {
-        val file = File(context.getFilesDir(), assetName)
+        val file = File(context.filesDir, assetName)
         if (file.exists() && file.length() > 0) {
-            return file.getAbsolutePath()
+            return file.absolutePath
         }
         try {
-            context.getAssets().open(assetName).use { `is` ->
+            context.assets.open(assetName).use { `is` ->
                 FileOutputStream(file).use { os ->
                     val buffer = ByteArray(4 * 1024)
                     var read: Int
@@ -24,7 +23,7 @@ object Utils {
                     }
                     os.flush()
                 }
-                return file.getAbsolutePath()
+                return file.absolutePath
             }
         } catch (e: IOException) {
             Log.e("Utils", "Error process asset $assetName to file path")
