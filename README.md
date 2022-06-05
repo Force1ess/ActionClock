@@ -1,4 +1,4 @@
-# Action Clock<img src="D:\Archieved\MakrdownCache\README\image-20220605173728298.png" alt="image-20220605173728298" style="zoom:10%;" />
+# Action Clock<img src="README.assets/image-20220605183132121.png" alt="image-20220605183132121" style="zoom:10%;" />
 
 You set a clock(inaccurate) and lock object, and close it by shooting your specified object
 
